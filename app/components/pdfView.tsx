@@ -17,7 +17,6 @@ export default function PdfView(props) {
   function removePdf(): void {
     setActive(() => false)
     setPdf(() => null)
-    console.log('remove')
   }
 
   function zoomIn(): void {
@@ -39,7 +38,6 @@ export default function PdfView(props) {
 
   function changeRatate(type: string, index?: number): void {
     if (type == 'rotateAll') {
-      console.log('jinlail')
 
       setPageRotate((pageRotate) => {
         const newArr = pageRotate.map((v) => {
@@ -49,7 +47,6 @@ export default function PdfView(props) {
             return v + 90
           }
         })
-        console.log(newArr, 'newarr')
 
         return [...newArr]
       })
@@ -79,7 +76,6 @@ export default function PdfView(props) {
       const blob = new Blob([data], { type: 'application/pdf' })
       //使用URL.createObjectURL()方法生成一个下载链接
       const url = URL.createObjectURL(blob)
-      console.log(url, 'eii')
       //创建a标签下载
       const a = document.createElement('a')
       a.href = url

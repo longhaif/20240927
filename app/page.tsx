@@ -17,14 +17,12 @@ export default function Home() {
   }
   const handleDragOver = (event) => {
     event.preventDefault()
-    console.log(event, 'drag')
     return false
   }
 
   const handleDrop = (event): void => {
     event.preventDefault()
     const files = event.dataTransfer.files
-    console.log(files[0], 'drop')
 
     if (files[0].type == 'application/pdf') {
       setIsActive(() => true)
